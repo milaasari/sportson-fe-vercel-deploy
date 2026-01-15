@@ -7,7 +7,7 @@ export interface CartItems extends Product {
 }
 
 export interface CustomerInfo {
-  customerName: string;
+  customerName: string; 
   customerContact: number | null;
   customerAddress: string;
 }
@@ -46,8 +46,8 @@ export const useCartStore = create<CartStore>() (
             set({items: get().items.filter((item) => item._id !== productId)});
           },
           reset: () => {
-            set({items: []})
-          }
+            set({items: [], customerInfo: nulll });
+          },
         }),
         {
          name: "cart-storage",

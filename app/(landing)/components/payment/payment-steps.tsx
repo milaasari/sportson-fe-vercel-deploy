@@ -12,7 +12,7 @@ import { transactionCheckout } from "@/app/services/transaction.services";
 
 const PaymentSteps = () => {
     const { push } = useRouter();
-    const {items, customerInfo} = useCartStore();
+    const {items, customerInfo, reset} = useCartStore();
     const [file, setFile] = useState<File | null>();
 
     const totalPrice = items.reduce(
@@ -55,7 +55,11 @@ const PaymentSteps = () => {
 
           const res =  await transactionCheckout(formData);
           
-          console.log("Transaction Response", res)
+          alert('Transaction created sucessfully!')
+          
+          push(`/order-status/${res._id}`);
+          reset()
+
         } catch(error) {
             console.log(error)
         }
