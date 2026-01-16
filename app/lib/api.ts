@@ -2,8 +2,7 @@ export async function fetchAPI<T>(
     endpoint: string,
     options?:RequestInit
 ): Promise<T> {
-  const cleanEndpoint = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${cleanEndpoint}`, {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}${endpoint}`, {
     ...options,
     cache: options?.cache || "no-store", 
   })
