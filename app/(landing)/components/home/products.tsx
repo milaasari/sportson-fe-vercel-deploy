@@ -19,7 +19,7 @@ const ProductsSection = ({products}: TProductsProps) => {
   const handleAddToCart = (e: React.MouseEvent, product: Product) => {
     e.preventDefault();
     e.stopPropagation();
-    addItem(product);
+    addItem(product, 1);
   }
 
   return (

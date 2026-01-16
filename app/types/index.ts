@@ -1,6 +1,6 @@
 export interface Category {
     _id: string;
-    mame: string;
+    name: string;
     description: string;
     imageUrl: string;
     createdAt: string;
@@ -9,7 +9,7 @@ export interface Category {
 
 export interface Product {
     _id: string;
-    mame: string;
+    name: string;
     description: string;
     imageUrl: string;
     category: Category;
@@ -32,7 +32,7 @@ export interface Bank {
 export interface Transaction {
     _id: string;
     paymentProof: string;
-    status: "pending" | "paid" | "rejection",
+    status: "pending" | "paid" | "rejected",
     purchasedItems: {
         production: string;
         qty: number;

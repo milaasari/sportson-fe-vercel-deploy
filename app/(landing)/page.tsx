@@ -1,5 +1,5 @@
 import { getAllCategories } from "../services/category.service";
-import { getAllProduct, getAllProducts } from "../services/product.service";
+import {  getAllProducts } from "../services/product.service";
 import CategoriesSection from "./components/home/categories";
 import HeroSection from "./components/home/hero";
 import ProductsSection from "./components/home/products";
